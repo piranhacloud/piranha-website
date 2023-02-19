@@ -1,6 +1,7 @@
 # Create a WebSocket application
 
-If you are looking to use Piranha Servlet with WebSockets then you landed at the right spot!
+If you are looking to use Piranha Servlet with WebSockets then you landed at the
+right spot!
 
 In 4 steps you will learn how to use WebSockets on Piranha Servlet. They are:
 
@@ -29,7 +30,7 @@ create the ```pom.xml``` file with the content as below.
     <name>WebSocket Chat application</name>
     <properties>
         <piranha.distribution>servlet</piranha.distribution>
-        <piranha.version>22.12.0</piranha.version>
+        <piranha.version>23.2.0</piranha.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <build>
@@ -122,6 +123,6 @@ As you can creating a WebSocket application using Piranha Servlet is quite easy!
 
 ## References
 
-1. [ZIP file containing sources](websocket.zip)
+1. [GitHub repository with the sources](https://github.com/piranhacloud/piranha-servlet-websocket-guide)
 
 [Up](../)
