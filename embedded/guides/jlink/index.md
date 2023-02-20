@@ -29,8 +29,9 @@ Create an empty directory to store your Maven project. Inside of that directory 
     <packaging>jar</packaging>
     <name>Piranha Embedded JLink application</name>
     <properties>
-        <piranha.version>23.1.0</piranha.version>
+        <piranha.version>23.2.0</piranha.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <main.class>helloworld.HelloWorldApplication</main.class>
     </properties>
     <build>
         <plugins>
@@ -45,7 +46,7 @@ Create an empty directory to store your Maven project. Inside of that directory 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.4.0</version>
+                <version>3.5.0</version>
                 <executions>
                     <execution>
                         <id>copy-dependencies</id>
@@ -64,7 +65,7 @@ Create an empty directory to store your Maven project. Inside of that directory 
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.0.0</version>
                 <configuration>
-                    <mainClass>helloworld.HelloWorldApplication</mainClass>
+                    <mainClass>${main.class}</mainClass>
                 </configuration>
             </plugin>
             <plugin>
@@ -74,63 +75,51 @@ Create an empty directory to store your Maven project. Inside of that directory 
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>helloworld.HelloWorldApplication</mainClass>
+                            <mainClass>${main.class}</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
-            </plugin> 
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.3.0</version>
-                <executions>
-                    <execution>
-                        <id>copy-resources</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${project.build.directory}/modules</outputDirectory>
-                            <resources>          
-                                <resource>
-                                    <directory>${project.build.directory}</directory>
-                                    <filtering>false</filtering>
-                                    <includes>
-                                        <include>*.jar</include>
-                                    </includes>
-                                </resource>
-                            </resources>              
-                        </configuration>            
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
-                <groupId>org.moditect</groupId>
-                <artifactId>moditect-maven-plugin</artifactId>
-                <version>1.0.0.RC1</version>
+                <groupId>org.jreleaser</groupId>
+                <artifactId>jreleaser-maven-plugin</artifactId>
+                <version>1.4.0</version>
+                <configuration>
+                    <jreleaser>
+                        <project>
+                            <description>${project.name}</description>
+                            <copyright>Manorrock.com</copyright>
+                        </project>
+                        <assemble>
+                            <jlink>
+                                <helloworld>
+                                    <active>ALWAYS</active>
+                                    <imageName>helloworld</imageName>
+                                    <java>
+                                        <mainModule>helloworld</mainModule>
+                                        <mainClass>${main.class}</mainClass>
+                                    </java>
+                                    <copyJars>true</copyJars>
+                                    <mainJar>
+                                        <path>${project.build.directory}/${project.artifactId}-${project.version}.jar</path>
+                                    </mainJar>
+                                    <jars>
+                                        <jar>
+                                            <pattern>${project.build.directory}/modules/*.jar</pattern>
+                                        </jar>
+                                    </jars>
+                                </helloworld>
+                            </jlink>
+                        </assemble>
+                    </jreleaser>
+                </configuration>
                 <executions>
                     <execution>
-                        <id>create-runtime-image</id>
+                        <id>assemble</id>
                         <phase>verify</phase>
                         <goals>
-                            <goal>create-runtime-image</goal>
+                            <goal>assemble</goal>
                         </goals>
-                        <configuration>
-                            <modulePath>
-                                <path>${project.build.directory}/modules</path>
-                            </modulePath>
-                            <modules>
-                                <module>helloworld</module>
-                            </modules>
-                            <launcher>
-                                <name>helloworld</name>
-                                <module>helloworld</module>
-                            </launcher>
-                            <noManPages>true</noManPages>
-                            <noHeaderFiles>true</noHeaderFiles>
-                            <compression>2</compression>
-                            <outputDirectory>${project.build.directory}/jlink</outputDirectory>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -237,15 +226,15 @@ module helloworld {
 The following command line will build your application:
 
 ```bash
-  mvn clean install
+  mvn verify
 ```
 
 ## Run the application
 
 In the previous step you created the JLink custom image. To execute the 
-application go to the `target/jlink` directory and execute the `helloworld`
-wrapper. And then point your browser to `http://localhost:8080` to see it in
-action.
+application go to the `target/jreleaser` directory and look for the `bin` 
+directory and execute the `helloworld` wrapper in it. And then point your
+browser to `http://localhost:8080` to see it in action.
 
 ## Conclusion
 
@@ -255,5 +244,6 @@ easy steps away!
 ## References
 
 1. [Piranha Embedded](https://piranha.cloud/embedded/)
+1. [JReleaser](https://jreleaser.org/)
 
 [Up](../)
