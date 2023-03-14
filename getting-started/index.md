@@ -26,8 +26,4 @@ If you are using Maven and want to use our convenient Maven plugin for a quick i
 
 You can extend the capability of a Piranha distribution by means of extensions.
 
-## JavaDoc documentation
-
-If you are interested in the JavaDoc for the modules that make up the various Piranha runtimes, see the [JavaDoc documentation](https://javadoc.io/doc/cloud.piranha/project/latest/index.html).
-
 [Up](../)
