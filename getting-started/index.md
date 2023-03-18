@@ -26,7 +26,7 @@ If you are using Maven and want to use our convenient Maven plugin for a quick i
 
 You can extend the capability of a Piranha distribution by means of extensions.
 
-## How do you run Pirahna in a container
+## How do you run Piranha in a container
 
 Unfortunately because Docker Inc has decided to no longer support the Free Team plan we can only make the Dockerfiles available on our GitHub repository for you to build the Docker images on your own (e.g. see the [dist/webprofile](https://github.com/piranhacloud/piranha/tree/current/dist/webprofile) directory). If you desire commercially supported images we suggest you contact our commercial partner [OmniFish](https://omnifish.ee/contact-us/).
 
