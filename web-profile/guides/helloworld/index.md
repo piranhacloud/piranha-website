@@ -27,8 +27,13 @@ Create an empty directory to store your Maven project. Inside of that directory 
     <artifactId>helloworld</artifactId>
     <version>1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>HelloWorld web application</name>
+    <name>Piranha WebProfile - HelloWorld application</name>
     <properties>
+        <java.version>17</java.version>
+        <junit.version>5.9.2</junit.version>
+        <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
+        <maven-failsafe-plugin.version>3.0.0-M8</maven-failsafe-plugin.version>
+        <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
         <piranha.distribution>webprofile</piranha.distribution>
         <piranha.version>23.3.0</piranha.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -37,19 +42,19 @@ Create an empty directory to store your Maven project. Inside of that directory 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.9.2</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.9.2</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
-            <version>5.9.2</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -83,15 +88,15 @@ Create an empty directory to store your Maven project. Inside of that directory 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <release>17</release>
+                    <release>${java.version}</release>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>3.0.0-M9</version>
+                <version>${maven-failsafe-plugin.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -104,7 +109,7 @@ Create an empty directory to store your Maven project. Inside of that directory 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.2</version>
+                <version>${maven-war-plugin.version}</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
