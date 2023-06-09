@@ -27,7 +27,7 @@ Create an empty directory to store your Maven project. Inside of that directory 
     <artifactId>jlink</artifactId>
     <version>1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Piranha Embedded JLink application</name>
+    <name>Piranha Embedded - JLink application</name>
     <properties>
         <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
         <java.version>17</java.version>

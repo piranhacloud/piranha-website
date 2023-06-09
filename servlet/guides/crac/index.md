@@ -37,7 +37,11 @@ create the ```pom.xml``` file with the content as below.
     <packaging>war</packaging>
     <name>Piranha Servlet - CRaC web application</name>
     <properties>
+        <java.version>17</java.version>
         <junit.version>5.10.0-M1</junit.version>
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+        <maven-failsafe-plugin.version>3.0.0</maven-failsafe-plugin.version>
+        <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
         <mojarra.version>4.0.2</mojarra.version>
         <piranha.distribution>servlet</piranha.distribution>
         <piranha.version>23.5.0</piranha.version>
@@ -112,15 +116,15 @@ create the ```pom.xml``` file with the content as below.
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <release>17</release>
+                    <release>${java.version}</release>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>3.0.0-M7</version>
+                <version>${maven-failsafe-plugin.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -133,7 +137,7 @@ create the ```pom.xml``` file with the content as below.
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.2</version>
+                <version>${maven-war-plugin.version}</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>

@@ -22,8 +22,10 @@ Create an empty directory to store your Maven project. Inside of that directory 
     <artifactId>springboot</artifactId>
     <version>1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Running Piranha Embedded with Spring Boot</name>
+    <name>Piranha Embedded - Running Piranha Embedded with Spring Boot</name>
     <properties>
+        <java.version>17</java.version>
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <piranha.version>23.5.0</piranha.version>
         <spring-boot.version>3.1.0</spring-boot.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -63,9 +65,9 @@ Create an empty directory to store your Maven project. Inside of that directory 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <release>17</release>
+                    <release>${java.version}</release>
                 </configuration>
             </plugin>
             <plugin>
