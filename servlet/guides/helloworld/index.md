@@ -64,7 +64,7 @@ Create an empty directory to store your Maven project. Inside of that directory 
             <plugin>
                 <groupId>cloud.piranha.maven.plugins</groupId>
                 <artifactId>piranha-maven-plugin</artifactId>
-                <version>${piranha.version}</version>
+                <version>22.11.0</version>
                 <executions>
                     <execution>
                         <id>pre-integration-test</id>
