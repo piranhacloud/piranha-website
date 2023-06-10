@@ -27,12 +27,30 @@ create the ```pom.xml``` file with the content as below.
     <artifactId>websocket</artifactId>
     <version>1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>WebSocket Chat application</name>
+    <name>Piranha Servlet - WebSocket Chat application</name>
     <properties>
+        <jakarta.websocket.version>2.1.0</jakarta.websocket.version>
+        <java.version>17</java.version>
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+        <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
         <piranha.distribution>servlet</piranha.distribution>
-        <piranha.version>23.2.0</piranha.version>
+        <piranha.version>23.5.0</piranha.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>jakarta.websocket</groupId>
+            <artifactId>jakarta.websocket-api</artifactId>
+            <version>${jakarta.websocket.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.websocket</groupId>
+            <artifactId>jakarta.websocket-client-api</artifactId>
+            <version>${jakarta.websocket.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
     <build>
         <finalName>websocket</finalName>
         <plugins>
@@ -44,35 +62,21 @@ create the ```pom.xml``` file with the content as below.
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <release>17</release>
+                    <release>${java.version}</release>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.2</version>
+                <version>${maven-war-plugin.version}</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-    <dependencies>
-        <dependency>
-            <groupId>jakarta.websocket</groupId>
-            <artifactId>jakarta.websocket-api</artifactId>
-            <version>2.1.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>jakarta.websocket</groupId>
-            <artifactId>jakarta.websocket-client-api</artifactId>
-            <version>2.1.0</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
 </project>
 ```
 
@@ -120,9 +124,5 @@ a WebSocket client.
 ## Conclusion
 
 As you can creating a WebSocket application using Piranha Servlet is quite easy!
-
-## References
-
-1. [GitHub repository with the sources](https://github.com/piranhacloud/piranha-servlet-websocket-guide)
 
 [Up](../)
