@@ -31,12 +31,40 @@ create the ```pom.xml``` file with the content as below.
     <artifactId>faces</artifactId>
     <version>1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>Jakarta Faces application</name>
+    <name>Piranha Web Profile - Jakarta Faces application</name>
     <properties>
+        <jakartaee.version>10.0.0</jakartaee.version>
+        <junit.version>5.10.0-M1</junit.version>
         <piranha.distribution>webprofile</piranha.distribution>
-        <piranha.version>22.12.0</piranha.version>
+        <piranha.version>23.5.0</piranha.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-web-api</artifactId>
+            <version>${jakartaee.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
     <build>
         <finalName>faces</finalName>
         <plugins>
@@ -95,32 +123,6 @@ create the ```pom.xml``` file with the content as below.
             </plugin>
         </plugins>
     </build>
-    <dependencies>
-        <dependency>
-            <groupId>jakarta.platform</groupId>
-            <artifactId>jakarta.jakartaee-web-api</artifactId>
-            <version>10.0.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.9.1</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.9.1</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
-            <version>5.9.1</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
 </project>
 ```
 

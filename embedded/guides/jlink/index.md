@@ -29,7 +29,13 @@ Create an empty directory to store your Maven project. Inside of that directory 
     <packaging>jar</packaging>
     <name>Piranha Embedded JLink application</name>
     <properties>
-        <piranha.version>23.2.0</piranha.version>
+        <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
+        <java.version>17</java.version>
+        <jrelease-maven-plugin.version>1.6.0</jrelease-maven-plugin.version>
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+        <maven-dependency-plugin.version>3.5.0</maven-dependency-plugin.version>
+        <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
+        <piranha.version>23.5.0</piranha.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <main.class>helloworld.HelloWorldApplication</main.class>
     </properties>
@@ -38,15 +44,15 @@ Create an empty directory to store your Maven project. Inside of that directory 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <release>17</release>
+                    <release>${java.version}</release>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.5.0</version>
+                <version>${maven-dependency-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>copy-dependencies</id>
@@ -63,7 +69,7 @@ Create an empty directory to store your Maven project. Inside of that directory 
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>${exec-maven-plugin.version}</version>
                 <configuration>
                     <mainClass>${main.class}</mainClass>
                 </configuration>
@@ -71,7 +77,7 @@ Create an empty directory to store your Maven project. Inside of that directory 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.3.0</version>
+                <version>${maven-jar-plugin.version}</version>
                 <configuration>
                     <archive>
                         <manifest>
@@ -83,8 +89,9 @@ Create an empty directory to store your Maven project. Inside of that directory 
             <plugin>
                 <groupId>org.jreleaser</groupId>
                 <artifactId>jreleaser-maven-plugin</artifactId>
-                <version>1.4.0</version>
+                <version>${jrelease-maven-plugin.version}</version>
                 <configuration>
+                    <gitRootSearch>true</gitRootSearch>
                     <jreleaser>
                         <project>
                             <description>${project.name}</description>
@@ -94,7 +101,7 @@ Create an empty directory to store your Maven project. Inside of that directory 
                             <jlink>
                                 <helloworld>
                                     <active>ALWAYS</active>
-                                    <imageName>helloworld</imageName>
+                                    <imageName>{{distributionName}}-{{projectVersion}}</imageName>
                                     <java>
                                         <mainModule>helloworld</mainModule>
                                         <mainClass>${main.class}</mainClass>

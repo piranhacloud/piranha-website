@@ -21,11 +21,11 @@ Create an empty directory to store your Maven project. Inside of that directory 
     <groupId>cloud.piranha.guides.embedded</groupId>
     <artifactId>springboot</artifactId>
     <version>1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>Running Piranha Embedded with Spring Boot</name>
     <properties>
-        <piranha.version>23.1.0</piranha.version>
-        <spring-boot.version>3.0.1</spring-boot.version>
+        <piranha.version>23.5.0</piranha.version>
+        <spring-boot.version>3.1.0</spring-boot.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencyManagement>
@@ -69,17 +69,17 @@ Create an empty directory to store your Maven project. Inside of that directory 
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.2</version>
-                <configuration>
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
-                </configuration>
-            </plugin>
-            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

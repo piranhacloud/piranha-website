@@ -24,21 +24,20 @@ create the ```pom.xml``` file with the content as below.
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>cloud.piranha.guides.coreprofile</groupId>
-    <artifactId>rest</artifactId>
+    <artifactId>netbeans-debug</artifactId>
     <version>1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>REST service</name>
+    <name>Debugging a REST service with NetBeans</name>
     <properties>
-        <jakarta.jakartaee-core-api.version>10.0.0</jakarta.jakartaee-core-api.version>
-        <junit.version>5.9.0</junit.version>
-        <piranha-maven-plugin.version>22.10.0</piranha-maven-plugin.version>
+        <jakartaee.version>10.0.0</jakartaee.version>
+        <junit.version>5.10.0-M1</junit.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
         <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-core-api</artifactId>
-            <version>${jakarta.jakartaee-core-api.version}</version>
+            <version>${jakartaee.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -61,12 +60,12 @@ create the ```pom.xml``` file with the content as below.
         </dependency>
     </dependencies>
     <build>
-        <finalName>rest</finalName>
+        <finalName>netbeans-debug</finalName>
         <plugins>
             <plugin>
                 <groupId>cloud.piranha.maven.plugins</groupId>
                 <artifactId>piranha-maven-plugin</artifactId>
-                <version>${piranha-maven-plugin.version}</version>
+                <version>22.10.0</version>
                 <executions>
                     <execution>
                         <id>pre-integration-test</id>
@@ -123,7 +122,7 @@ create the ```pom.xml``` file with the content as below.
                     <plugin>
                         <groupId>cloud.piranha.maven.plugins</groupId>
                         <artifactId>piranha-maven-plugin</artifactId>
-                        <version>${piranha-maven-plugin.version}</version>
+                        <version>22.10.0</version>
                         <configuration>
                             <jvmArguments>-Xdebug -agentlib:jdwp=transport=dt_socket,server=n,suspend=n,address=${jpda.address}</jvmArguments>
                         </configuration>
@@ -132,12 +131,6 @@ create the ```pom.xml``` file with the content as below.
             </build>
         </profile>
     </profiles>
-    <repositories>
-        <repository>
-            <id>jakarta-staging</id>
-            <url>https://jakarta.oss.sonatype.org/content/repositories/staging/</url>
-        </repository>
-    </repositories>
 </project>
 ```
 
@@ -236,6 +229,5 @@ are set!
 
 1. [Piranha Core Profile](https://piranha.cloud/core-profile/)
 1. [Piranha Maven plugin documentation](https://piranha.cloud/maven/piranha-maven-plugin/plugin-info.html)
-1. [ZIP file containing sources](netbeans-debug.zip)
 
 [Back](../)

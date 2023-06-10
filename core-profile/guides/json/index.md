@@ -32,16 +32,15 @@ Create an empty directory to store your Maven project. Inside of that directory 
     <packaging>war</packaging>
     <name>Temperature JSON service</name>
     <properties>
-        <jakarta.jakartaee-core-api.version>10.0.0</jakarta.jakartaee-core-api.version>
-        <junit.version>5.9.0</junit.version>
-        <piranha-maven-plugin.version>22.10.0</piranha-maven-plugin.version>
+        <jakartaee.version>10.0.0</jakartaee.version>
+        <junit.version>5.10.0-M1</junit.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
         <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-core-api</artifactId>
-            <version>${jakarta.jakartaee-core-api.version}</version>
+            <version>${jakartaee.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -69,7 +68,7 @@ Create an empty directory to store your Maven project. Inside of that directory 
             <plugin>
                 <groupId>cloud.piranha.maven.plugins</groupId>
                 <artifactId>piranha-maven-plugin</artifactId>
-                <version>${piranha-maven-plugin.version}</version>
+                <version>22.10.0</version>
                 <executions>
                     <execution>
                         <id>pre-integration-test</id>
@@ -118,12 +117,6 @@ Create an empty directory to store your Maven project. Inside of that directory 
             </plugin>
         </plugins>
     </build>
-    <repositories>
-        <repository>
-            <id>jakarta-staging</id>
-            <url>https://jakarta.oss.sonatype.org/content/repositories/staging/</url>
-        </repository>
-    </repositories>
 </project>
 ```
 
@@ -302,6 +295,5 @@ Jakarta EE Core Profile.
 
 1. [Piranha Core Profile](https://piranha.cloud/core-profile/)
 1. [Piranha Maven plugin documentation](https://piranha.cloud/maven/piranha-maven-plugin/plugin-info.html)
-1. [ZIP file containing sources](json.zip)
 
 [Back](../)

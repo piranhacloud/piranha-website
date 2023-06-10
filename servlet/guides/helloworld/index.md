@@ -27,29 +27,29 @@ Create an empty directory to store your Maven project. Inside of that directory 
     <artifactId>helloworld</artifactId>
     <version>1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>HelloWorld webapplication</name>
+    <name>Piranha Servlet - HelloWorld web application</name>
     <properties>
+        <junit.version>5.10.0-M1</junit.version>
         <piranha.distribution>servlet</piranha.distribution>
-        <piranha.version>22.11.0</piranha.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.9.0</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.9.0</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
-            <version>5.9.0</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -59,7 +59,7 @@ Create an empty directory to store your Maven project. Inside of that directory 
             <plugin>
                 <groupId>cloud.piranha.maven.plugins</groupId>
                 <artifactId>piranha-maven-plugin</artifactId>
-                <version>${piranha.version}</version>
+                <version>22.11.0</version>
                 <executions>
                     <execution>
                         <id>pre-integration-test</id>
@@ -111,12 +111,6 @@ Create an empty directory to store your Maven project. Inside of that directory 
             </plugin>
         </plugins>
     </build>
-    <repositories>
-        <repository>
-            <id>jakarta-staging</id>
-            <url>https://jakarta.oss.sonatype.org/content/repositories/staging/</url>
-        </repository>
-    </repositories>
 </project>
 ```
 
@@ -201,9 +195,5 @@ deploy your application:
 ## Conclusion
 
 As you can see getting started with Piranha Servlet is easy!
-
-## References
-
-1. [ZIP file containing sources](helloworld.zip)
 
 [Back](../)

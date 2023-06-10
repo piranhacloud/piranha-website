@@ -25,9 +25,13 @@ Create an empty directory to store your Maven project. Inside of that directory 
     <artifactId>helloworld</artifactId>
     <version>1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Piranha Embedded Hello World application</name>
+    <name>Create a Hello World web application</name>
     <properties>
-        <piranha.version>23.2.0</piranha.version>
+        <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
+        <java.version>17</java.version>
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+        <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
+        <piranha.version>23.5.0</piranha.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <build>
@@ -35,15 +39,15 @@ Create an empty directory to store your Maven project. Inside of that directory 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <release>17</release>
+                    <release>${java.version}</release>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>${exec-maven-plugin.version}</version>
                 <configuration>
                     <mainClass>helloworld.HelloWorldApplication</mainClass>
                 </configuration>
@@ -51,7 +55,7 @@ Create an empty directory to store your Maven project. Inside of that directory 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.3.0</version>
+                <version>${maven-jar-plugin.version}</version>
                 <configuration>
                     <archive>
                         <manifest>
