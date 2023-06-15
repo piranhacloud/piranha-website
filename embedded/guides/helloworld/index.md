@@ -31,7 +31,7 @@ Create an empty directory to store your Maven project. Inside of that directory 
         <java.version>17</java.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
-        <piranha.version>23.5.0</piranha.version>
+        <piranha.version>23.6.0</piranha.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <build>

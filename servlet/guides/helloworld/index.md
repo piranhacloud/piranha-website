@@ -35,7 +35,7 @@ Create an empty directory to store your Maven project. Inside of that directory 
         <maven-failsafe-plugin.version>3.0.0</maven-failsafe-plugin.version>
         <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
         <piranha.distribution>servlet</piranha.distribution>
-        <piranha.version>23.5.0</piranha.version>
+        <piranha.version>23.6.0</piranha.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
@@ -64,7 +64,7 @@ Create an empty directory to store your Maven project. Inside of that directory 
             <plugin>
                 <groupId>cloud.piranha.maven.plugins</groupId>
                 <artifactId>piranha-maven-plugin</artifactId>
-                <version>22.11.0</version>
+                <version>${piranha.version}</version>
                 <executions>
                     <execution>
                         <id>pre-integration-test</id>
