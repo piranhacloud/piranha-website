@@ -50,7 +50,7 @@
       
 <p><strong>Full name</strong>:</p>
       
-<p>cloud.piranha.maven.plugins:piranha-maven-plugin:23.2.0:run</p>
+<p>cloud.piranha.maven.plugins:piranha-maven-plugin:23.7.0-SNAPSHOT:run</p>
       
 <p><strong>Description</strong>:</p>
       
@@ -143,6 +143,17 @@
           
 <tr class="a">
             
+<td align="left"><code><a href="#httpsPort">&lt;httpsPort&gt;</a></code></td>
+            
+<td><code>Integer</code></td>
+            
+<td><code>-</code></td>
+            
+<td>Stores the HTTPS port<br /><strong>Default value is</strong>: <code>-1</code>.<br /><strong>User property is</strong>: <code>piranha.httpsPort</code>.<br /></td>
+          </tr>
+          
+<tr class="b">
+            
 <td align="left"><code><a href="#jvmArguments">&lt;jvmArguments&gt;</a></code></td>
             
 <td><code>String</code></td>
@@ -150,6 +161,17 @@
 <td><code>-</code></td>
             
 <td>Stores the JVM arguments.<br /><strong>User property is</strong>: <code>piranha.jvmArguments</code>.<br /></td>
+          </tr>
+          
+<tr class="a">
+            
+<td align="left"><code><a href="#skip">&lt;skip&gt;</a></code></td>
+            
+<td><code>boolean</code></td>
+            
+<td><code>-</code></td>
+            
+<td>Stores the skip property.<br /><strong>Default value is</strong>: <code>false</code>.<br /><strong>User property is</strong>: <code>piranha.skip</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -207,6 +229,20 @@
           
 <li><strong>Default</strong>: <code>8080</code></li>
         </ul><hr /></section><section>
+<h4><a name="a.3ChttpsPort.3E"></a><strong><a name="httpsPort">&lt;httpsPort&gt;</a></strong></h4>
+        
+<div>Stores the HTTPS port</div>
+        
+<ul>
+          
+<li><strong>Type</strong>: <code>java.lang.Integer</code></li>
+          
+<li><strong>Required</strong>: <code>No</code></li>
+          
+<li><strong>User Property</strong>: <code>piranha.httpsPort</code></li>
+          
+<li><strong>Default</strong>: <code>-1</code></li>
+        </ul><hr /></section><section>
 <h4><a name="a.3CjvmArguments.3E"></a><strong><a name="jvmArguments">&lt;jvmArguments&gt;</a></strong></h4>
         
 <div>Stores the JVM arguments.</div>
@@ -233,6 +269,20 @@
           
 <li><strong>Default</strong>: <code>${project.build.directory}/piranha</code></li>
         </ul><hr /></section><section>
+<h4><a name="a.3Cskip.3E"></a><strong><a name="skip">&lt;skip&gt;</a></strong></h4>
+        
+<div>Stores the skip property.</div>
+        
+<ul>
+          
+<li><strong>Type</strong>: <code>boolean</code></li>
+          
+<li><strong>Required</strong>: <code>No</code></li>
+          
+<li><strong>User Property</strong>: <code>piranha.skip</code></li>
+          
+<li><strong>Default</strong>: <code>false</code></li>
+        </ul><hr /></section><section>
 <h4><a name="a.3Cversion.3E"></a><strong><a name="version">&lt;version&gt;</a></strong></h4>
         
 <div>Stores the version of the Piranha runtime to use.</div>
@@ -256,7 +306,7 @@
     </div>
     <div id="footer">
       <div class="xright">
-        Copyright (c) 2002-2022 Manorrock.com. All rights reserved.
+        Copyright (c) 2002-2023 Manorrock.com. All rights reserved.
       </div>
       <div class="clear">
         <hr/>
