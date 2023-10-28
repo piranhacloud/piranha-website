@@ -31,6 +31,8 @@ distribution:
 
 ## Documentation
 
+1. [Jakarta EE 10 Web Profile Specification](https://jakarta.ee/specifications/webprofile/10/jakarta-webprofile-spec-10.0.pdf)
+1. [Jakarta EE 10 Web Profile API documentation](https://jakarta.ee/specifications/webprofile/10/apidocs/)
 1. [Developer Guides](guides/)
 
 [Up](../)
