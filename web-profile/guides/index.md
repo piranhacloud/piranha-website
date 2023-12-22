@@ -7,5 +7,6 @@
 1. [Create a Jakarta Pages web application](pages/)
 1. [Create a Jakarta REST service](rest/)
 1. [Testing with JUnit 5 and Playwright](playwright/)
+1. [Testing with our container image](image/)
 
 [Up](../)
