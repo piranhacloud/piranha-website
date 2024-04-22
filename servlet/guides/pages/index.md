@@ -1,4 +1,4 @@
-# Create a Pages application
+# Create a Jakarta Pages application on Piranha Servlet
 
 If you are looking to use Piranha Servlet with Jakarta Page you have come to the
 right place!
@@ -26,18 +26,21 @@ create the ```pom.xml``` file with the content as below.
     <modelVersion>4.0.0</modelVersion>
     <groupId>cloud.piranha.guides.servlet</groupId>
     <artifactId>pages</artifactId>
-    <version>1-SNAPSHOT</version>
+    <version>24.5.0-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>Piranha Servlet - Jakarta Pages application</name>
+    <name>Create a Jakarta Pages application on Piranha Servlet</name>
     <properties>
-        <java.version>17</java.version>
-        <junit.version>5.10.0-M1</junit.version>
-        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
-        <maven-failsafe-plugin.version>3.0.0</maven-failsafe-plugin.version>
-        <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
+        <!-- dependencies -->
+        <junit.version>5.10.2</junit.version>
+        <piranha.version>24.4.0</piranha.version>
+        <!-- other -->
+        <java.version>21</java.version>
         <piranha.distribution>servlet</piranha.distribution>
-        <piranha.version>23.6.0</piranha.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- plugins -->
+        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+        <maven-failsafe-plugin.version>3.2.5</maven-failsafe-plugin.version>
+        <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
     </properties>
     <dependencies>
         <dependency>
@@ -162,7 +165,7 @@ import org.junit.jupiter.api.Test;
 public class HelloIT {
 
     @Test
-    public void testHelloFacesXhtml() throws Exception {
+    public void testHelloPagesJsp() throws Exception {
         HttpClient client = HttpClient
                 .newBuilder()
                 .connectTimeout(Duration.ofSeconds(60))
