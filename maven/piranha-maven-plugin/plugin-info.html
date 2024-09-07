@@ -83,13 +83,9 @@
 <th>Maven</th>
 <th>JDK</th></tr>
 <tr class="b">
-<td align="left">from 23.11.0 to 24.8.0</td>
+<td align="left">from 24.6.0 to 24.8.0</td>
 <td>-</td>
-<td>21</td></tr>
-<tr class="a">
-<td align="left">from 22.9.0 to 23.10.0</td>
-<td>-</td>
-<td>17</td></tr></table></section><section>
+<td>21</td></tr></table></section><section>
 <h2><a name="Usage"></a>Usage</h2><a name="Usage"></a>
 <p>You should specify the version in your project's plugin configuration:</p>
 <div class="source">
@@ -100,9 +96,9 @@
     &lt;pluginManagement&gt;
       &lt;plugins&gt;
         &lt;plugin&gt;
-          &lt;groupId&gt;cloud.piranha.maven.plugins&lt;/groupId&gt;
+          &lt;groupId&gt;cloud.piranha.maven&lt;/groupId&gt;
           &lt;artifactId&gt;piranha-maven-plugin&lt;/artifactId&gt;
-          &lt;version&gt;24.9.99-SNAPSHOT&lt;/version&gt;
+          &lt;version&gt;24.9.0-SNAPSHOT&lt;/version&gt;
         &lt;/plugin&gt;
         ...
       &lt;/plugins&gt;
@@ -110,7 +106,7 @@
     &lt;!-- To use the plugin goals in your POM or parent POM --&gt;
     &lt;plugins&gt;
       &lt;plugin&gt;
-        &lt;groupId&gt;cloud.piranha.maven.plugins&lt;/groupId&gt;
+        &lt;groupId&gt;cloud.piranha.maven&lt;/groupId&gt;
         &lt;artifactId&gt;piranha-maven-plugin&lt;/artifactId&gt;
       &lt;/plugin&gt;
       ...
