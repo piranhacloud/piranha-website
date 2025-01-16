@@ -83,7 +83,44 @@ Tomcat or Jetty then try out this distribution!</p>
 <li>Jakarta Pages</li>
 <li>Jakarta Servlet</li>
 <li>Jakarta WebSocket</li>
-</ul><section><a id="Documentation"></a>
+</ul><section><a id="Download_Piranha_Server"></a>
+<h2>Download Piranha Server</h2>
+<p>Piranha Server is available as a zip or tar.gz file from Maven Central.</p>
+<p>The download link below will take you to the location on Maven Central where you
+can download any version of Piranha Server. Select the version by clicking
+on the directory link and then download the zip or tar.gz file from there.</p>
+<p><a href="https://repo1.maven.org/maven2/cloud/piranha/dist/piranha-dist-server/" class="externalLink">Download</a></p>
+<p>Note the name of the JAR file you want to download should look like
+piranha-dist-server-X.Y.Z.zip or piranha-dist-server-X.Y.Z.tar.gz</p></section><section><a id="Starting_the_server"></a>
+<h2>Starting the server</h2>
+<p>Assuming you have downloaded the zip or tar.gz file as previously indicated you
+will need to unzip it into a directory of your choice. Then by going to the
+<code>bin</code> directory you can run Piranha Server by issuing the following command
+line:</p>
+
+<pre class="prettyprint"><code class="nohighlight nocode">./start.sh
+</code></pre>
+<p>On Windows use <code>start.cmd</code> instead.</p></section><section><a id="Stopping_the_server"></a>
+<h2>Stopping the server</h2>
+<p>To stop the server use:</p>
+
+<pre class="prettyprint"><code class="nohighlight nocode">./stop.sh
+</code></pre>
+<p>On Windows use <code>stop.cmd</code> instead.</p></section><section><a id="Deploying_your_application"></a>
+<h2>Deploying your application</h2>
+<p>Deploying your web application is as simple as copying your WAR file into the
+<code>webapps</code> directory of the server and then stopping and starting the server.</p></section><section><a id="Running_using_Docker"></a>
+<h2>Running using Docker</h2>
+<p>If you want to run Piranha Server using Docker we have a base image
+available for you using Eclipse Temurin as the Java runtime.</p>
+<p>See <a href="https://github.com/orgs/piranhacloud/packages/container/package/server" class="externalLink">https://github.com/orgs/piranhacloud/packages/container/package/server</a> for
+more information and how to pull that image.</p>
+<p>To use this as a base image you would create your own Dockerfile and add your
+WAR file using a COPY as illustrated below:</p>
+
+<pre class="prettyprint"><code class="language-Dockerfile">FROM ghcr.io/piranhacloud/server:latest
+COPY target/my.war /home/piranha/piranha/webapps/my.war
+</code></pre></section><section><a id="Documentation"></a>
 <h2>Documentation</h2>
 <ol style="list-style-type: decimal;">
 
