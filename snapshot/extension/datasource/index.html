@@ -94,7 +94,7 @@
         &lt;/property&gt;
     &lt;/data-source&gt;
 </code></pre>
-<p>For runtimes that do not include the web.xml extension you will need to add it if you want
+<p>For runtimes that do not include the Piranha web.xml extension you will need to add it if you want
 to override the default DataSource as described above. You can do this by adding the
 following dependency to your pom.xml:</p>
 
@@ -103,7 +103,23 @@ following dependency to your pom.xml:</p>
     &lt;artifactId&gt;piranha-extension-webxml&lt;/artifactId&gt;
     &lt;version&gt;${piranha.version}&lt;/version&gt;
 &lt;/dependency&gt;
-</code></pre></section></section>        </main>
+</code></pre></section><section><a id="Register_Any_Other_DataSource"></a>
+<h2>Register Any Other DataSource</h2>
+<p>You can register any other DataSource by using a similar approach. Below is an example of configuring a PostgreSQL DataSource:</p>
+
+<pre class="prettyprint"><code class="language-xml">    &lt;data-source&gt;
+        &lt;name&gt;java:comp/PostgreSQLDataSource&lt;/name&gt;
+        &lt;class-name&gt;org.postgresql.ds.PGSimpleDataSource&lt;/class-name&gt;
+        &lt;url&gt;jdbc:postgresql://localhost:5432/mydb&lt;/url&gt;
+        &lt;user&gt;myuser&lt;/user&gt;
+        &lt;password&gt;mypassword&lt;/password&gt;
+        &lt;property&gt;
+            &lt;name&gt;ssl&lt;/name&gt;
+            &lt;value&gt;true&lt;/value&gt;
+        &lt;/property&gt;
+    &lt;/data-source&gt;
+</code></pre>
+<p>Make sure to replace the values with your actual PostgreSQL database details.</p></section></section>        </main>
       </div>
     </div>
     <hr/>
